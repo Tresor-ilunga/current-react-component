@@ -29,7 +29,7 @@ export default function Validation() {
                 passwordConfirmation: false
             }
 
-            if(inputsStates.pseudo.length < 3 || inputsStates.pseudo.length > 64){
+            if(inputsStates.pseudo < 3 || inputsStates.pseudo.length > 15){
                 setShowValidation(state => ({...state, pseudo: true}))
             }
             else {
@@ -53,7 +53,12 @@ export default function Validation() {
                 setShowValidation(state => ({...state, passwordConfirmation: false}))
             }
 
-            console.log(areValid);
+            if(Object.values(areValid).every(value => value)){
+                return true
+            }
+            else {
+                false
+            }
         }
     }
     return (

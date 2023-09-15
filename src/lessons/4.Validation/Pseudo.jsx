@@ -1,9 +1,9 @@
-export default function Pseudo(inputsStates, setInputsStates, showValidation) {
+export default function Pseudo({inputsStates, setInputsStates, showValidation}) {
     return (
         <>
         <label 
-            htmlFor="userName" 
-            className="text-slate-50">Votre pseudo (3-64 caractères)
+        className="text-slate-50"
+        htmlFor="userName">Votre pseduo (3-64 caractères)
         </label>
         <input 
         id="userName"
@@ -12,6 +12,11 @@ export default function Pseudo(inputsStates, setInputsStates, showValidation) {
         value={inputsStates.pseudo}
         onChange={e => setInputsStates({...inputsStates, pseudo: e.target.value})}
         />
+        {showValidation.pseudo && (
+            <p className="text-red-400 font-semibold">
+                Votre pseudo doit contenir entre 3 et 64 caractères.
+            </p>
+        )}
         </>
     )
 }
