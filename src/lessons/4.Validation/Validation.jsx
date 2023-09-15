@@ -15,7 +15,7 @@ export default function Validation() {
         password: false,
         passwordConfirmation: false
     })
-
+    console.log(inputsStates);
     function handleSubmit(e){
         e.preventDefault()
     }
@@ -26,9 +26,21 @@ export default function Validation() {
             <p className="text-slate-100 text-xl mb-6">
                 Créez votre nom d'utilisateur et votre mot de passe
             </p> 
-            <Pseudo />
-            <Password />
-            <Confirmation />
+            <Pseudo 
+            inputsStates={inputsStates}
+            setInputsStates={setInputsStates}
+            showValidation={showValidation}
+            />
+            <Password 
+            inputsStates={inputsStates}
+            setInputsStates={setInputsStates}
+            showValidation={showValidation}
+            />
+            <Confirmation 
+            inputsStates={inputsStates}
+            setInputsStates={setInputsStates}
+            showValidation={showValidation}
+            />
             <button className="mt-10 bg-slate-100 px-4 py-2 min-w-[125px] rounded">
                 Valider
             </button>

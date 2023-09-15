@@ -1,6 +1,4 @@
-
-
-export default function Confirmation() {
+export default function Confirmation(inputsStates, setInputsStates, showValidation) {
     return (
         <>
         <label 
@@ -11,6 +9,8 @@ export default function Confirmation() {
         id="confirmation"
         type="password" 
         className="rounded w-full p-1 mt-2"
+        value={inputsStates.passwordConfirmation}
+        onChange={e => setInputsStates({...inputsStates, passwordConfirmation: e.target.value})}
         />
         </>
     )

@@ -1,6 +1,4 @@
-
-
-export default function Password() {
+export default function Password(inputsStates, setInputsStates, showValidation) {
     return (
         <>
         <label 
@@ -11,6 +9,8 @@ export default function Password() {
         id="password"
         type="password" 
         className="rounded w-full p-1 mt-2"
+        value={inputsStates.password}
+        onChange={e => setInputsStates({...inputsStates, password: e.target.value})}
         />
         </>
     )
